@@ -1,0 +1,25 @@
+navsat_transform_node:
+  ros__parameters:
+    # Define the coordinate frames
+    map_frame: "map"
+    odom_frame: "odom"
+    base_link_frame: "base_link"
+
+    # Parameters for converting the GPS data
+    use_odometry_yaw: false       # Set to true if using yaw from odometry
+    yaw_offset: 0.0               # Adjust if you have a fixed offset between the IMU and robot heading
+    magnetic_declination_radians: 0.0
+
+    zero_altitude: true           # Set to true if you want to zero the altitude
+
+    # UTM transform broadcast parameters (if you need a UTM frame)
+    broadcast_cartesian_transform: true
+
+    # Option to publish a filtered GPS Odometry message
+    publish_filtered_gps: true
+
+    use_odometer_yaw: true        # Set to true if using yaw from odometry
+    
+
+    # Additional parameters can be added as required
+  

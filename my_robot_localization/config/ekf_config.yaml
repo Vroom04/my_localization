@@ -1,0 +1,53 @@
+ekf_node:
+  ros__parameters:
+    frequency: 30.0
+    sensor_timeout: 0.1
+    two_d_mode: false
+    transform_time_offset: 0.0
+    transform_timeout: 0.0
+    print_diagnostics: true
+    debug: false
+    debug_out_file: /home/ros/ros2_ws/src/state_estimation/robot_localization/debug/debug.txt
+    publish_tf: true
+    publish_acceleration: true
+    odom_frame: odom
+    base_link_frame: base_link
+    world_frame: odom
+
+    imu0: /imu/data
+    imu0_config: [false, false, false,  # x,  y,  z
+                  true, true, true,     # r,  p,  y
+                  false, false, false,  # dx, dy, dz
+                  false, false, false,  # dr, dp, dy
+                  true,   true, true]   # ddx,ddy,ddz
+    imu0_differential: true
+    imu0_relative: true
+    imu0_queue_size: 10
+    imu0_remove_gravitational_acceleration: true
+
+    #GPS Data (Navsat -> Odometry)
+    odom0: /odometry/gps
+    odom0_config: [true, true, false,    # x, y. z
+                   false, false, true,   # r, p, y
+                   false, false, false,  #dx, dy, dz
+                   false, false, true,   #dr, dp, dz,
+                   false, false ,false]  #ddx, ddy, ddz
+
+    odom0_differential: false
+    odom0_relative: false
+    odom0_queue_size: 10
+    #process_noise_covariance: [0.05,  0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.05,   0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.06,   0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.03,   0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.03,   0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.06,   0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.025,   0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.025,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.04,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.01,   0.0,    0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.01,   0.0,    0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.02,   0.0,    0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.01,   0.0,    0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.01,   0.0,
+    #                           0.0,   0.0,    0.0,    0.0,    0.0,    0.0,    0.0,     0.0,     0.0,    0.0,    0.0,    0.0,    0.0,    0.0,    0.015 ] 

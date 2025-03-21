@@ -1,0 +1,57 @@
+cmake_minimum_required (VERSION 3.5)
+project(my_robot_localization)
+
+
+#set(CMAKE_PREFIX_PATH "$ENV{HOME}/Main-Computer/install:${CMAKE_PREFIX_PATH}")
+find_package(ament_cmake REQUIRED)
+find_package(rclcpp REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(visualization_msgs REQUIRED)
+find_package(tf2 REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(sensor_msgs REQUIRED)
+
+
+add_executable(state_estimator_node src/state_estimator_node.cpp)
+
+add_executable(fix_gps_header_node src/fix_gps_header_node.cpp)
+ament_target_dependencies(fix_gps_header_node rclcpp sensor_msgs)
+
+# Installa l'eseguibile
+
+#add_executable(navsat_trasform_node src/navsat_trasform_node)
+
+ament_target_dependencies(state_estimator_node
+   rclcpp
+   tf2
+   tf2_ros
+   sensor_msgs
+   nav_msgs
+   geometry_msgs
+   visualization_msgs
+)
+
+install(TARGETS
+  fix_gps_header_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
+
+install(TARGETS state_estimator_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
+install(DIRECTORY launch/
+        DESTINATION share/${PROJECT_NAME}/
+)
+
+install(
+  DIRECTORY config
+  DESTINATION share/${PROJECT_NAME}/config
+)
+
+
+ament_package()  
