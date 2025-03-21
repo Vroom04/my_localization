@@ -1,0 +1,23 @@
+header:
+  stamp:
+    sec: 1742574410
+    nanosec: 615682993
+  frame_id: base_link
+status:
+  status: 2
+  service: 0
+latitude: 45.50559888041425
+longitude: 9.165970272869643
+altitude: 140.534
+position_covariance:
+- 0.24418750671858672
+- -0.0006799596662145496
+- 0.0
+- -0.0006799596662145427
+- 0.243564938253488
+- 0.0
+- 0.0
+- 0.0
+- 4.999589091425411e-07
+position_covariance_type: 3
+---

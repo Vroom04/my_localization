@@ -1,0 +1,49 @@
+header:
+  stamp:
+    sec: 1742574176
+    nanosec: 328062797
+  frame_id: base_link
+orientation:
+  x: 0.44921875
+  y: -0.887451171875
+  z: 0.08984375
+  w: 0.05078125
+orientation_covariance:
+- 0.01
+- 0.0
+- 0.0
+- 0.0
+- 0.01
+- 0.0
+- 0.0
+- 0.0
+- 0.01
+angular_velocity:
+  x: -0.146484375
+  y: -0.302734375
+  z: 0.048828125
+angular_velocity_covariance:
+- 0.1
+- 0.0
+- 0.0
+- 0.0
+- 0.1
+- 0.0
+- 0.0
+- 0.0
+- 0.1
+linear_acceleration:
+  x: 0.62109375
+  y: 0.15234375
+  z: -9.9609375
+linear_acceleration_covariance:
+- 0.02
+- 0.0
+- 0.0
+- 0.0
+- 0.02
+- 0.0
+- 0.0
+- 0.0
+- 0.02
+---
